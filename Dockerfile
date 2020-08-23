@@ -12,6 +12,8 @@ RUN sudo apt update \
     gnupg2 \
     lsb-release \
     python3-pip \
+    vim \
+    terminator\
     && apt autoclean -y \
     && apt autoremove -y \
     && rm -rf /var/lib/apt/lists/*  
