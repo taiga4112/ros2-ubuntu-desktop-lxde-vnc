@@ -19,12 +19,16 @@ Please see Dockerfile for detail.
 - Set OS by using [dorowu/ubuntu-desktop-lxde-vnc](https://github.com/fcwu/docker-ubuntu-vnc-desktop).
 - Installing ROS2 via Debian packages as [this url](https://index.ros.org/doc/ros2/Installation/Foxy/Linux-Install-Debians/#id10).
   - ROS2 version : [Foxy Fitzroy](https://index.ros.org/doc/ros2/Releases/Release-Foxy-Fitzroy/)
+- Add sourcing to shell startup script
+  ```sh
+  echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
+  ```
 
-At first, [adding sourcing to your VNC shell startup script](https://index.ros.org/doc/ros2/Tutorials/Configuring-ROS2-Environment/#add-sourcing-to-your-shell-startup-script) is strongly recommended like this.
+<!-- At first, [adding sourcing to your VNC shell startup script](https://index.ros.org/doc/ros2/Tutorials/Configuring-ROS2-Environment/#add-sourcing-to-your-shell-startup-script) is strongly recommended like this.
 
 ```sh
 echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
-```
+``` -->
 
 ## How to build
 

@@ -24,5 +24,6 @@ RUN sudo apt update \
     && apt install -y ros-foxy-desktop \
     && apt autoclean -y \
     && apt autoremove -y \
-    && rm -rf /var/lib/apt/lists/*  
+    && rm -rf /var/lib/apt/lists/*
+RUN sudo sh -c 'echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc'
 RUN pip3 install -U argcomplete
