@@ -13,7 +13,8 @@ RUN sudo apt update \
     lsb-release \
     python3-pip \
     vim \
-    terminator\
+    terminator \
+    git \
     && apt autoclean -y \
     && apt autoremove -y \
     && rm -rf /var/lib/apt/lists/*  
@@ -22,8 +23,11 @@ RUN curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sud
 RUN sudo sh -c 'echo "deb [arch=$(dpkg --print-architecture)] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2-latest.list'
 RUN sudo apt update \
     && apt install -y ros-foxy-desktop \
+    python3-rosdep \
+    python3-colcon-common-extensions \
     && apt autoclean -y \
     && apt autoremove -y \
     && rm -rf /var/lib/apt/lists/*
 RUN sudo sh -c 'echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc'
+RUN sudo rosdep init && rosdep update
 RUN pip3 install -U argcomplete
